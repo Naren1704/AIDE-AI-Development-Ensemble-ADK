@@ -1,409 +1,404 @@
-
 # AIDE ADK: Agent Development Kit 🚀
 
-A modular, extensible multi-agent system for AI-powered web application development. Built on the foundation of AIDE with enhanced architecture, observability, and session management.
+A modular, extensible multi-agent system for AI-powered web application development. Built with Google's Agent Development Kit (ADK) featuring Gemini integration, session management, and enterprise-ready architecture.
 
 ![ADK Architecture](https://img.shields.io/badge/Architecture-Modular_Multi--Agent-blue)
-![Ollama Powered](https://img.shields.io/badge/Powered%20By-Ollama-orange)
+![Gemini Powered](https://img.shields.io/badge/Powered%20By-Google%20Gemini-red)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-green)
 ![Vue.js](https://img.shields.io/badge/Frontend-Vue.js-brightgreen)
-![Observability](https://img.shields.io/badge/Observability-Enhanced-yellow)
+![Google ADK](https://img.shields.io/badge/Framework-Google%20ADK-purple)
 
 ## 🌟 What is AIDE ADK?
 
-AIDE ADK (Agent Development Kit) is an evolved version of the original AIDE system, featuring a modular multi-agent architecture with enhanced session management, comprehensive observability, and extensible plugin support. It transforms AI-powered development from a fixed pipeline into a configurable, observable platform.
+AIDE ADK (Agent Development Kit) is an enterprise-ready evolution of the original AIDE system, now powered by Google's Agent Development Kit and Gemini models. It features a modular multi-agent architecture with enhanced session management, comprehensive observability, and seamless integration with Google's AI ecosystem.
 
 ## 🏗️ ADK Architecture Overview
 
+```
 AIDE-ADK/
-
-├── 🎯 ADK Core System
-
-│ ├── Configurable Agent Registry
-
-│ ├── Session Management & Memory
-
-│ ├── Enhanced Observability
-
-│ └── Plugin System Foundation
-
+├── 🎯 Google ADK Core
+│   ├── Gemini Integration & LLM Management
+│   ├── Session Management (InMemorySessionService)
+│   ├── Sequential Agent Runner
+│   └── Retry Configuration & Error Handling
 ├── 🤖 Multi-Agent Ensemble
-
-│ ├── Requirements Evolver Agent
-
-│ ├── UX Architect Agent
-
-│ ├── UI Designer Agent
-
-│ ├── Frontend Engineer Agent
-
-│ ├── Data Architect Agent
-
-│ ├── API Designer Agent
-
-│ └── DevOps Agent
-
+│   ├── Requirements Evolver Agent
+│   ├── UX Architect Agent  
+│   ├── UI Designer Agent
+│   ├── Frontend Engineer Agent
+│   ├── Data Architect Agent
+│   ├── API Designer Agent
+│   └── DevOps Agent
 ├── 🔧 ADK Services
-
-│ ├── Session-Aware Storage
-
-│ ├── Modular Project Builder
-
-│ ├── Enhanced Integration Agent
-
-│ └── Observable WebSocket Server
-
+│   ├── Session-Aware Storage
+│   ├── Modular Project Builder
+│   ├── Enhanced Integration Agent
+│   └── Observable WebSocket Server
 └── 🌐 Web UI (Compatible)
-
-├── Vue.js 3 Frontend
-
-├── Real-time Chat Interface
-
-└── Live Preview & File Explorer
-
+    ├── Vue.js 3 Frontend
+    ├── Real-time Chat Interface
+    └── Live Preview & File Explorer
+```
 
 ## 🆚 ADK vs Original AIDE
 
 | Feature | Original AIDE | AIDE ADK |
 |---------|---------------|----------|
-| **Architecture** | Fixed agent pipeline | Modular, configurable |
-| **Session Management** | Basic conversation history | Enhanced sessions with memory compaction |
-| **Observability** | Basic logging | Comprehensive metrics & tracing |
-| **Extensibility** | Hard-coded agents | Plugin-ready architecture |
-| **Validation** | Strict rules | Trust-based, Ollama-optimized |
-| **Configuration** | Simple settings | YAML-ready, environment-aware |
+| **AI Backend** | Ollama (Local) | Google Gemini (Cloud) |
+| **Framework** | Custom Implementation | Google Agent Development Kit |
+| **Session Management** | Basic conversation history | InMemorySessionService with context compaction |
+| **Agent Coordination** | Custom routing logic | Sequential Runner with session context |
+| **Error Handling** | Basic retries | Configurable retry policies |
+| **Extensibility** | Hard-coded agents | ADK-based plugin architecture |
 
 ## 🎯 Core ADK Concepts Implemented
 
-### 1. **Multi-agent System** 🎭
-- **Configurable Agent Registry**: Dynamic agent loading from configuration
-- **Sequential Agent Chain**: Ordered execution with intelligent switching
-- **Specialized Agent Classes**: Domain-specific expertise with shared base
-- **Context-Aware Routing**: Smart message routing based on session context
+### 1. **Agent Powered by LLM** 🤖
+- **Gemini Integration**: Complete shift from Ollama to Google Gemini
+- **ADK Agent Framework**: Built on Google's official Agent Development Kit
+- **Configurable Models**: Support for Gemini 1.5 Flash, Pro, and other variants
+- **Retry Mechanisms**: Built-in retry policies for reliable API calls
 
-### 2. **Sessions & Memory** 💾
-- **ADKSession Class**: Dedicated session management with state tracking
-- **Context Engineering**: Smart memory compaction and optimization
-- **Agent State Persistence**: Individual agent interaction history
-- **Session-Aware Generation**: Context-informed project building
+### 2. **Sequential Agents** ⚡
+- **Runner-based Execution**: Coordinated agent flow using ADK Runner
+- **Session Context**: Each agent receives proper session context
+- **Ordered Processing**: Sequential execution with memory persistence
+- **Context Engineering**: Smart context building from session memory
 
-### 3. **Observability** 📊
-- **Structured Logging**: Comprehensive, leveled logging throughout
-- **Performance Metrics**: Request counting, timing, connection tracking
-- **System Monitoring**: Health checks and status reporting
-- **Traceability**: Full request/response flow with agent activity
+### 3. **Sessions & Memory** 💾
+- **InMemorySessionService**: Google ADK's session management
+- **State Persistence**: Agent interactions stored across sessions
+- **Memory Compaction**: Automatic context optimization
+- **Session-aware Generation**: Context-informed project building
 
 ## ✨ Key ADK Features
 
-### 🎭 Enhanced Multi-Agent Coordination
+### 🎭 Enterprise-Grade Agent System
 
-# Configurable agent system
+```python
+# Google ADK Agent Management
+from google.adk.agents import Agent
+from google.adk.models.google_llm import Gemini
+from google.adk.runners import Runner
 
-AGENTS_CONFIG = {
-    "requirements_evolver": {
-        "description": "📋 Core Features & Goals",
-        "temperature": 0.7,
-        "max_tokens": 800
-    },
-    # ... more agents
+# Register agents with ADK
+agent = Agent(
+    name="requirements_evolver",
+    system_prompt="Your specialized prompt...",
+    llm=Gemini(model="gemini-1.5-flash")
+)
+```
+
+### 💾 Advanced Session Management
+
+```python
+# ADK Session Configuration
+from google.adk.sessions import InMemorySessionService
+
+session_service = InMemorySessionService()
+session = await session_service.get_session(project_id)
+
+# Session memory with automatic compaction
+session.memory.append({
+    'agent': agent_name,
+    'user_input': user_message,
+    'response': agent_response
+})
+```
+
+### 🔄 Sequential Agent Coordination
+
+```python
+# Run agents sequentially with ADK Runner
+results = await self.adk_manager.run_sequential_agents(
+    session_id=project_id,
+    user_input=user_message,
+    agent_chain=settings.AGENT_CHAIN
+)
+```
+
+### 🛡️ Production-Ready Configuration
+
+```python
+# Gemini & Retry Configuration
+GEMINI_MODEL = "gemini-1.5-flash"
+RETRY_CONFIG = {
+    "max_retries": 3,
+    "backoff_factor": 1.0,
+    "retryable_status_codes": [429, 500, 503]
+}
+```
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+- Node.js 16+
+- Google AI API Key
+
+### Installation
+
+1. **Clone the ADK Repository**
+   ```bash
+   git clone https://github.com/your-username/AIDE-ADK.git
+   cd AIDE-ADK
+   ```
+
+2. **Set up Google AI API Key**
+   ```bash
+   export GOOGLE_API_KEY='your-google-ai-api-key-here'
+   ```
+
+3. **Backend Setup**
+   ```bash
+   # Create virtual environment
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   
+   # Install dependencies
+   pip install -r requirements.txt
+   ```
+
+4. **Frontend Setup** (Same as original AIDE)
+   ```bash
+   cd web-ui
+   npm install
+   cd ..
+   ```
+
+### Running AIDE ADK
+
+1. **Start the ADK Backend**
+   ```bash
+   python run.py
+   ```
+
+2. **Start the Frontend** (in a new terminal)
+   ```bash
+   cd web-ui
+   npm run dev
+   ```
+
+3. **Access ADK**
+   - Open http://localhost:3000
+   - Start chatting with the Google Gemini-powered multi-agent system!
+
+## 🔧 ADK Configuration
+
+### Gemini Configuration (`config/settings.py`)
+```python
+# Gemini Configuration
+GEMINI_MODEL = "gemini-1.5-flash"  # Fast and cost-effective
+# Alternatives: "gemini-1.5-pro", "gemini-1.0-pro"
+
+# ADK Agent Settings
+MAX_RESPONSE_TOKENS = 2000
+TEMPERATURE = 0.7
+
+# Retry Configuration for ADK
+RETRY_CONFIG = {
+    "max_retries": 3,
+    "backoff_factor": 1.0,
+    "retryable_status_codes": [429, 500, 503]
 }
 
-AGENT_SEQUENCE = [
+# Agent Sequence
+AGENT_CHAIN = [
     'requirements_evolver',
     'ux_architect', 
     'ui_designer',
-    # ... sequential flow
+    'frontend_engineer',
+    'data_architect',
+    'api_designer',
+    'devops'
 ]
+```
 
-💾 Advanced Session Management
+### Supported Gemini Models
+- `gemini-1.5-flash` (Recommended for speed and cost)
+- `gemini-1.5-pro` (Higher quality, more expensive)
+- `gemini-1.0-pro` (Legacy, stable)
 
-# Session configuration
-SESSION_CONFIG = {
-    "max_messages": 50,
-    "context_window": 4000,
-    "compaction_strategy": "recent",  # recent/summary/priority
-    "retention_days": 30
-}
-📊 Comprehensive Observability
+## 🛠️ Development & Extension
 
-# Observability setup
-OBSERVABILITY_CONFIG = {
-    "log_level": "INFO",
-    "enable_tracing": True,
-    "enable_metrics": True,
-    "trace_agent_calls": True,
-    "log_agent_responses": True
-}
+### Adding New Agents with ADK
 
-🚀 Quick Start
+```python
+from google.adk.agents import Agent
 
-Prerequisites
+class ADKOrchestrator:
+    def _register_agents(self):
+        """Register agents with Google ADK"""
+        self.adk_manager.register_agent(
+            'custom_agent',
+            """You are a Custom Agent. Your role is...
+            - Specialized task description
+            - Domain-specific guidelines
+            - Interaction rules"""
+        )
+```
 
-Python 3.8+
+### Custom Session Management
 
-Node.js 16+
+```python
+from google.adk.sessions import InMemorySessionService
 
-Ollama (with at least one model installed)
+class CustomADKManager:
+    def __init__(self):
+        self.session_service = InMemorySessionService()
+        self.llm = Gemini(model=GEMINI_MODEL)
+        self.runner = Runner()
+```
 
-Installation
+### Extending with ADK Tools
 
-Clone the ADK Repository
+```python
+# Example of adding tools (future enhancement)
+from google.adk.tools import Tool
 
-git clone https://github.com/your-username/AIDE-ADK.git
-cd AIDE-ADK
-Backend Setup
+custom_tool = Tool(
+    name="code_validator",
+    description="Validates generated code",
+    function=validate_code_function
+)
+```
 
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+## 📊 Monitoring & Observability
 
-# Install dependencies
-pip install -r requirements.txt
-Frontend Setup (Same as original AIDE)
+### Logging
+- **Structured Logging**: Comprehensive ADK system logs
+- **Agent Activity**: Track Gemini API calls and responses
+- **Session Tracking**: Monitor session lifecycle and memory usage
+- **Performance Metrics**: Response times and success rates
 
-cd web-ui
-npm install
-cd ..
-Ollama Setup
-
-# Install Ollama (if not already installed)
-# Visit: https://ollama.ai/
-
-# Pull a model
-ollama pull llama2
-ADK Configuration
-
-# Edit config/settings.py
-OLLAMA_MODEL = "llama2"
-# Configure agents, sessions, observability as needed
-Running AIDE ADK
-Start the ADK Backend
-
-python run.py
-Start the Frontend (in a new terminal)
-
-cd web-ui
-npm run dev
-Access ADK
-
-Open http://localhost:3000
-
-Start chatting with the enhanced multi-agent system!
-
-🔧 ADK Configuration
-Agent Configuration (config/settings.py)
-python
-AGENTS_CONFIG = {
-    "requirements_evolver": {
-        "description": "📋 Core Features & Goals",
-        "prompt_template": "requirements_evolver",
-        "temperature": 0.7,
-        "max_tokens": 800
-    },
-    # Add more agents or modify existing ones
-}
-
-AGENT_SEQUENCE = [
-    'requirements_evolver',
-    'ux_architect', 
-    # Customize the agent flow
-]
-Session & Memory Configuration
-python
-SESSION_CONFIG = {
-    "max_messages": 50,
-    "context_window": 4000,
-    "compaction_strategy": "recent",  # recent/summary/priority
-    "retention_days": 30
-}
-Observability Configuration
-
-OBSERVABILITY_CONFIG = {
-    "log_level": "INFO",  # DEBUG/INFO/WARNING/ERROR
-    "enable_tracing": True,
-    "enable_metrics": True,
-    "log_file": "adk_system.log"
-}
-
-🛠️ Development & Extension
-Adding New Agents
-Create Agent Class
-
-class CustomAgent(ADKAgent):
-    def _build_prompt(self, user_message: str, context: Dict[str, Any]) -> str:
-        # Custom prompt logic
-        return custom_prompt
-Register in Configuration
-
-AGENTS_CONFIG = {
-    "custom_agent": {
-        "description": "🎯 Custom Domain",
-        "temperature": 0.6,
-        "max_tokens": 600
-    }
-}
-
-AGENT_SEQUENCE = [
-    'requirements_evolver',
-    'custom_agent',  # Add to sequence
-    # ... other agents
-]
-Customizing Session Management
-
-class CustomSession(ADKSession):
-    def _compact_context(self):
-        # Custom compaction logic
-        if len(self.messages) > self.max_messages:
-            # Implement custom strategy
-            pass
-Extending Observability
-
-# Custom metrics collection
-def track_custom_metric(metric_name: str, value: float):
-    logger.info(f"METRIC {metric_name}: {value}")
-    # Add to custom metrics storage
-    
-📊 Monitoring & Logs
-Log Files
-adk_system.log - Main system log
-
-adk_websocket.log - WebSocket communication log
-
-adk_storage.log - Storage operations log
-
-Key Metrics Tracked
-Agent interaction counts
-
-Message processing times
-
-Generation success rates
-
-Session activity levels
-
-Connection statistics
-
-Health Checks
-bash
-# Check system status via WebSocket
+### Health Checks
+```bash
+# Check Gemini API connectivity
 curl -X GET "http://localhost:8765/health"
 
-# Monitor log files
+# Monitor system logs
 tail -f adk_system.log
-🎯 Use Cases Enhanced by ADK
-🏥 Complex Healthcare Systems
-Multi-specialist agent coordination
+```
 
-Session persistence for patient contexts
+## 🎯 Enhanced Use Cases
 
-Compliance and audit trails
+### 🏢 Enterprise Applications
+- **Scalable Architecture**: Google ADK provides enterprise-grade foundation
+- **Reliable API Integration**: Built-in retry mechanisms and error handling
+- **Session Persistence**: Maintain context across complex conversations
+- **Production Ready**: Battle-tested Google infrastructure
 
-🏢 Enterprise Applications
-Configurable agent teams per department
+### 🔬 Research & Development
+- **Experimental Configurations**: Easy agent and model swapping
+- **Performance Metrics**: Detailed timing and success rate tracking
+- **Context Engineering**: Advanced session memory management
+- **Extensible Framework**: Built on Google's evolving ADK platform
 
-Enhanced observability for debugging
+### 🌐 Multi-Platform Development
+- **Framework Agnostic**: Easy to adapt for different tech stacks
+- **API-First Design**: Clean separation between agents and frontend
+- **Cloud Native**: Designed for deployment on Google Cloud Platform
+- **Scalable Sessions**: Efficient memory management for many concurrent users
 
-Custom agent extensions for business logic
+## 🔄 Migration from Original AIDE
 
-🔬 Research & Development
-Experimental agent configurations
+### Smooth Upgrade Path
+1. **Backup your projects**
+2. **Set up Google AI API key**
+3. **Install ADK version**
+4. **Existing projects work immediately**
+5. **Enjoy enhanced Google ADK features**
 
-Detailed interaction tracing
+### Breaking Changes
+- **None!** ADK maintains full backward compatibility
+- All existing projects and frontend code work unchanged
+- Enhanced features are opt-in through configuration
+- Same WebSocket API and data structures
 
-Performance metrics for optimization
+### Benefits of Migration
+- **Enterprise Reliability**: Google's infrastructure and support
+- **Better Performance**: Optimized Gemini models and ADK framework
+- **Future Proof**: Built on Google's evolving agent platform
+- **Enhanced Features**: Session management, retry policies, and more
 
-🔄 Migration from Original AIDE
-Smooth Upgrade Path
-Backup your projects
+## 🤝 Contributing to ADK
 
-Install ADK version
-
-Existing projects work immediately
-
-Enjoy enhanced features
-
-Breaking Changes
-None! ADK maintains full backward compatibility
-
-All existing projects and frontend code work unchanged
-
-Enhanced features are opt-in through configuration
-
-🤝 Contributing to ADK
 We welcome contributions to enhance the ADK platform! Areas for contribution:
 
-Core Enhancements
-New agent specializations
+### Core Enhancements
+- New agent specializations using ADK framework
+- Additional session management strategies
+- Enhanced observability features
+- Performance optimizations for Gemini integration
 
-Additional session strategies
+### Plugin Development
+- Framework adapters (React, Django, etc.)
+- Database integrations with session persistence
+- External tool integrations using ADK Tools
+- Custom validation systems
 
-Enhanced observability features
+### Documentation & Examples
+- Agent development guides for Google ADK
+- Configuration examples for different use cases
+- Performance tuning guides
+- Deployment guides for Google Cloud Platform
 
-Performance optimizations
+## 📞 Support & Community
 
-Plugin Development
-Framework adapters (React, Django, etc.)
+- 📧 **Email**: narendren2006@gmail.com
+- 💬 **Discussions**: GitHub Discussions
+- 🐛 **Issues**: GitHub Issue
 
-Database integrations
+## 🙏 Acknowledgments
 
-External tool integrations
+- **Google ADK Team** - Agent Development Kit framework
+- **Google Gemini** - Powerful AI models and infrastructure
+- **Original AIDE Project** - Foundation for this evolution
+- **Vue.js Community** - Excellent frontend framework
+- **AI/ML Community** - Continuous inspiration and innovation
 
-Custom validation systems
+## 🐛 Troubleshooting
 
-Documentation & Examples
-Agent development guides
+### Common ADK Issues
 
-Configuration examples
+**Gemini API Issues**
+```bash
+# Check API key
+echo $GOOGLE_API_KEY
 
-Use case tutorials
+# Test Gemini connectivity
+python -c "import google.generativeai as genai; genai.configure(api_key='$GOOGLE_API_KEY'); print('API OK')"
+```
 
-Performance tuning guides
-
-🙏 Acknowledgments
-Original AIDE Project - Foundation for this evolution
-
-Ollama - Local AI inference capabilities
-
-Vue.js & Flask Communities - Excellent frameworks
-
-AI/ML Community - Continuous inspiration and innovation
-
-🐛 Troubleshooting
-Common ADK Issues
-Session Memory Issues
-
+**Session Management Problems**
+```bash
 # Check session logs
 grep "SESSION" adk_system.log
 
 # Reset specific session
 rm projects/project-{id}.json
-Agent Configuration Problems
+```
 
-# Enable debug logging
-OBSERVABILITY_CONFIG = {
-    "log_level": "DEBUG",
-    # ... other settings
+**Performance Optimization**
+```python
+# Adjust retry configuration
+RETRY_CONFIG = {
+    "max_retries": 5,  # Increase for unstable connections
+    "backoff_factor": 2.0,  # More aggressive backoff
 }
-Performance Optimization
+```
 
-# Adjust context compaction
-SESSION_CONFIG = {
-    "compaction_strategy": "summary",  # More aggressive compaction
-    "max_messages": 30  # Reduce context window
-}
-
-📞 Support & Community
-📧 Email: narendren2006@gmail.com
-
-💬 Discussions: GitHub Discussions
-
-🐛 Issues: GitHub Issues
-
+---
 
 <div align="center">
-AIDE ADK: Evolved Multi-Agent Development
 
-Building on AIDE's foundation with modular architecture, enhanced observability, and enterprise-ready features.
+**AIDE ADK: Enterprise Multi-Agent Development**
 
-🏠 Home • 📖 Docs • 🚀 Getting Started • 🎯 ADK Features
+*Powered by Google Gemini and Agent Development Kit*
+
+[🏠 Home](https://github.com/your-username/AIDE-ADK) • 
+[📖 Docs](https://github.com/your-username/AIDE-ADK/wiki) • 
+[🚀 Getting Started](#quick-start) • 
+[🎯 ADK Features](#-core-adk-concepts-implemented)
 
 </div>
