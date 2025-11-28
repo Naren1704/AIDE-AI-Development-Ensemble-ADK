@@ -8,7 +8,7 @@ from pathlib import Path
 # Project Paths
 PROJECTS_DIR = Path("projects")
 TEMPLATES_DIR = PROJECTS_DIR / "templates"
-GEMINI_API_KEY='AIzaSyCFbP9T5ah4q7Np_RrJzppFgmFfUbbvBPI'
+GEMINI_API_KEY='your-api-key'
 # Gemini Configuration
 GEMINI_MODEL = "gemini-1.0-pro-latest"  # Fast and cost-effective
 # Alternatives: "gemini-1.5-pro", "gemini-1.0-pro"
@@ -53,5 +53,6 @@ AGENT_CHAIN = [
 # Create directories
 PROJECTS_DIR.mkdir(exist_ok=True)
 TEMPLATES_DIR.mkdir(exist_ok=True)
+
 
 print("✅ ADK Config Loaded - Using Gemini & Agent Development Kit")
