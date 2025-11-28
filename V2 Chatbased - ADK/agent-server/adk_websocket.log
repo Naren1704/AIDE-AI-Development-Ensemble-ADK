@@ -1,0 +1,7 @@
+2025-11-25 21:36:34,840 - websockets.server - INFO - server listening on [::1]:8765
+2025-11-25 21:36:34,840 - websockets.server - INFO - server listening on 127.0.0.1:8765
+2025-11-25 21:37:06,489 - websockets.server - INFO - server closing
+2025-11-25 21:37:06,492 - websockets.server - INFO - server closed
+2025-11-25 22:11:30,453 - websockets.server - INFO - server listening on 127.0.0.1:8765
+2025-11-25 22:11:30,453 - websockets.server - INFO - server listening on [::1]:8765
+2025-11-25 22:11:40,743 - websockets.server - INFO - connection open
